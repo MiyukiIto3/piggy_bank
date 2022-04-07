@@ -1,0 +1,18 @@
+<header>
+  <div class="header_logo"><i class="fa-solid fa-piggy-bank"></i> Piggy Bank</div>
+  <nav>
+    <input id="menu_toggle" type="checkbox" />
+    <label class="menu_btn" for="menu_toggle">
+      <span></span>
+    </label>
+    <ul class="menu_box">
+      <li><%= link_to 'Home', "#", class: "menu_item" %><span class="current_page"></li>
+      <li><%= link_to 'About', "#", class: "menu_item" %></li>
+      <li><%= link_to 'Signup', "#", class: "menu_item" %></li>
+      <li><%= link_to 'Login', "#", class: "menu_item" %></li>
+      <li><%= link_to 'Setting', "#", class: "menu_item" %></li>
+      <li><%= link_to 'Kids', "#", class: "menu_item" %></li>
+      <li><%= link_to 'Logout',  "#", method: :delete, class: "menu_item" %></li>
+    </ul>
+  </nav>
+</header>
