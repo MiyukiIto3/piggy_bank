@@ -129,3 +129,19 @@ nav {
   }
   @media screen and (min-width: 48em) {display: none;}
 }
+
+// フッター
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.0em;
+  background: #e9e4d8;
+}
+
+.footer_logo {
+  font-size: 12px;
+  color: #989181;
+  margin: 0 auto;
+}
