@@ -8,11 +8,11 @@
      <ul class="menu_box">
       <li><%= link_to 'Home', root_path, class: "menu_item" %></li>
       <li><%= link_to 'About', "#", class: "menu_item" %></li>
-      <li><%= link_to 'Signup', "#", class: "menu_item" %></li>
-      <li><%= link_to 'Login', "#", class: "menu_item" %></li>
+      <li><%= link_to 'Signup', new_user_registration_path, class: "menu_item" %></li>
+      <li><%= link_to 'Login', new_user_session_path, class: "menu_item" %></li>
       <li><%= link_to 'Setting', "#", class: "menu_item" %></li>
       <li><%= link_to 'Kids', "#", class: "menu_item" %></li>
-      <li><%= link_to 'Logout',  "#", method: :delete, class: "menu_item" %></li>
+      <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: "menu_item" %></li>
     </ul>
   </nav>
 </header>
