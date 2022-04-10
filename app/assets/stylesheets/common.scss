@@ -209,16 +209,10 @@ footer {
   max-width: 600px;
   text-align: center;
   padding: 24px;
-  margin: 0px auto 50px auto;
+  margin: 0px auto;
   background: #f7f1e4;
   border-radius: 4px;
   box-shadow: #52616F 0px 1px 3px 0px;
-  @media screen and (max-width: 767px) {max-width: 280px;}
-}
-
-.devise_inner {
-  width: 600px;
-  margin: 0px auto;
   @media screen and (max-width: 767px) {max-width: 280px;}
 }
 
@@ -228,6 +222,11 @@ footer {
   width: auto;
   height: auto;
   color: #52616F;
+  font-size: 14px;
+}
+
+.actions{
+  line-height: 16px;
 }
 
 // 新規登録画面 デバイスによるクラス作成打ち消し
