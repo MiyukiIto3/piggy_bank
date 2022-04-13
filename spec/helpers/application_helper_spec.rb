@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ApplicationHelper, type: :helper do
-  describe "page_full_title" do
+  describe "ページタイトル" do
     it "page_titleが空白の場合、BASE_TITLEが表示されること" do
       expect(page_full_title("")).to eq "Piggy Bank"
     end
