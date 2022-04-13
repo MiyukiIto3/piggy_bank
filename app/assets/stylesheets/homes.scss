@@ -1,3 +1,36 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// トップ画面
+
+.top {
+  display: flex;
+  position: relative;
+  img {
+    background-size: cover;
+    width:100%;
+    height: auto;
+  }
+}
+
+.top_messarge {
+  position: absolute;
+  color: white;
+  margin: 60px 60px; 
+  h1 {
+    font-size: 3vw;
+    padding-bottom: 1.5vw;
+  }
+  p {font-size: 1.8vw;}
+  @media screen and (max-width: 767px) {
+    margin: 30px 20px;
+    h1 {
+      font-size: 5vw;
+      padding-bottom: 2.5vw;
+    }
+    p {
+      font-size: 3vw;
+    }
+  }
+}

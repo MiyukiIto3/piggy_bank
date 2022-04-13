@@ -1,0 +1,59 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// サインイン＆ログイン＆ログアウト画面
+
+.devise_out {
+  height: 100vh;
+  background: #f7f1e4;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  text-align: center;
+  color: #52616f;
+  font-weight: 400;
+  h2 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size:16px;
+  }
+}
+
+.devise_frame {
+  max-width: 600px;
+  padding: 24px;
+  margin: 0px auto;
+  background: #f7f1e4;
+  border-radius: 4px;
+  box-shadow: #52616F 0px 1px 3px 0px;
+  @media screen and (max-width: 767px) {max-width: 280px;}
+}
+
+.field {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  height: auto;
+  color: #52616F;
+  font-size: 14px;
+}
+
+.actions {
+  line-height: 16px;
+}
+
+#error_explanation {
+  h2 {
+    font-size: 16px;
+    color: #f06c64;
+  }
+}
+
+// 新規登録画面 デバイスによるクラス作成打ち消し
+
+.field_with_errors {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}

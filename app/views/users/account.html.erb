@@ -1,0 +1,17 @@
+<% provide(:title, "Account") %>
+<div class="devise_out">
+  <div class="devise_frame">
+    <h2 class="user_profile_title">アカウント</h2>
+    <div class="field">
+      <h5>メールアドレス</h5>
+      <h5><%= "#{@user.email}" %></h5>
+    </div>
+    <div class="field">
+      <h5>パスワード</h5>
+      <h5>*********</h5>
+    </div>
+    <div class="actions">
+      <%= button_to '編集', edit_user_registration_path, method: :get, class:"btn_s" %>
+    </div>
+  </div>
+</div>

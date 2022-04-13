@@ -193,52 +193,6 @@ footer {
   margin: 0 auto;
 }
 
-// サインイン＆ログイン＆ログアウト画面
-
-.devise_out {
-  background: #f7f1e4;
-  padding-top: 36px;
-  padding-bottom: 36px;
-  text-align: center;
-  h2 {
-    font-size: 20px;
-    color: #52616f;
-    font-weight: 400;
-  }
-}
-
-.devise_frame {
-  max-width: 600px;
-  text-align: center;
-  padding: 24px;
-  margin: 0px auto;
-  background: #f7f1e4;
-  border-radius: 4px;
-  box-shadow: #52616F 0px 1px 3px 0px;
-  @media screen and (max-width: 767px) {max-width: 280px;}
-}
-
-.field {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: auto;
-  height: auto;
-  color: #52616F;
-  font-size: 14px;
-}
-
-.actions{
-  line-height: 16px;
-}
-
-// 新規登録画面 デバイスによるクラス作成打ち消し
-
-.field_with_errors {
-  margin: 0;
-  padding: 0;
-  display: inline;
-}
-
 // 入力フォーム
 
 .input_form {
@@ -274,6 +228,23 @@ footer {
   }
 }
 
+// 削除ボタン
+
+.btn_delete {
+  font-size: 14px;
+  background: darkgray;
+  color: white;
+  height: 32px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 // 白ボタン・ワイド（submit用）
 
 .linkbtn_white {
@@ -294,8 +265,8 @@ footer {
 
 .btn_s {
   background: #52616f;
-  color: #b6c2ce;
-  height: 24px;
+  color: white;
+  height: 32px;
   width: 120px;
   border: none;
   border-radius: 5px;
@@ -308,35 +279,4 @@ footer {
 
 .btn_hidden {
   display: none;
-}
-
-// トップ画面
-
-.top {
-  display: flex;
-  position: relative;
-  img {
-    background-size: cover;
-    width:100%;
-    height: auto;
-  }
-}
-
-.top_messarge {
-  position: absolute;
-  color: white;
-  margin: 60px 60px; 
-  h1 {
-    font-size: 3vw;
-    padding-bottom: 1.5vw;
-  }
-  p {font-size: 1.8vw;}
-  @media screen and (max-width: 767px) {
-    margin: 30px 20px;
-    h1 {
-      font-size: 5vw;
-      padding-bottom: 2.5vw;
-    }
-    p {font-size: 3vw;}
-  }
 }
