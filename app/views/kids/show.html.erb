@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kid.name %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @kid.sex %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @kid.image %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @kid.target %>
+</p>
+
+<p>
+  <strong>Target amount:</strong>
+  <%= @kid.target_amount %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @kid.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_kid_path(@kid) %> |
+<%= link_to 'Back', kids_path %>

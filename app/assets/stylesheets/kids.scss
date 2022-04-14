@@ -1,0 +1,26 @@
+// Place all the styles related to the kids controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.kids_table {
+  margin: 20px auto;
+  width: 60%;
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 28px;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 12px;
+  }
+  th {
+    width: 40%;
+    border-bottom: 1px solid #e9e4d8;
+  }
+  td {
+    width: 60%;
+    border-bottom: 1px solid #e9e4d8;
+  }
+}
+
+
+
