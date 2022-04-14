@@ -225,7 +225,7 @@ footer {
 .inner_frame {
   max-width: 600px;
   padding: 24px;
-  margin: 10px auto;
+  margin: 16px auto;
   background: #f7f1e4;
   border-radius: 4px;
   box-shadow: #52616F 0px 1px 3px 0px;
@@ -238,7 +238,10 @@ footer {
   width: auto;
   height: auto;
   color: #52616F;
-  font-size: 1.4vw;
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.4vw;
+  }
 }
 
 .actions {
@@ -267,6 +270,10 @@ footer {
   width: 80%;
   border: 1px solid #ced4da;
   border-radius: 5px;
+}
+
+.wide {
+  width: 100%;
 }
 
 // 入力フォーム 文章
@@ -324,6 +331,15 @@ footer {
   }
 }
 
+// 緑ボタン・ワイド
+
+.linkbtn_wide {
+  background: #52616f;
+  color: white;
+  width: 80%;
+}
+
+
 // 白ボタン・ワイド
 
 .linkbtn_white {
@@ -354,8 +370,6 @@ footer {
   @media screen and (max-width: 767px) {
     display: block;
     width: 100%;
-    height: 20px;
-    line-height: 20px;
   }
 }
 

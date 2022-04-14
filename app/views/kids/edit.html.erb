@@ -1,6 +1,15 @@
-<h1>Editing Kid</h1>
+<% provide(:title, "Kids") %>
+<div class="out_frame">
+  <div class="inner_frame">
+    <h2>編集</h2>
 
-<%= render 'form', kid: @kid %>
+    <%= render 'form', kid: @kid %>
 
-<%= link_to 'Show', @kid %> |
-<%= link_to 'Back', kids_path %>
+    <div class="linkbtn linkbtn_wide">
+      <%= link_to '確認', @kid, class: "linkbtn_wide" %>
+    </div>
+    <div class="linkbtn linkbtn_white">
+      <%= link_to '戻る', kids_path %>
+    </div>  
+  </div>
+</div>

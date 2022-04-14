@@ -1,34 +1,39 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Kids") %>
+<div class="out_frame">
+  <div class="inner_frame">
 
-<p>
-  <strong>Name:</strong>
-  <%= @kid.name %>
-</p>
+    <table class="kids_table">
+      <tr>
+        <th>名前</th>
+        <td><%= @kid.name %></td>
+      </tr>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @kid.sex %>
-</p>
+      <tr>
+        <th>性別</th>
+        <td><%= @kid.sex %></td>
+      </tr>
 
-<p>
-  <strong>Image:</strong>
-  <%= @kid.image %>
-</p>
+      <tr>
+        <th>欲しいもの</th>
+        <td><%= @kid.target %></td>
+      </tr>
 
-<p>
-  <strong>Target:</strong>
-  <%= @kid.target %>
-</p>
+      <tr>
+        <th>目標金額</th>
+        <td><%= "#{@kid.target_amount}円" %></td>
+      </tr>
 
-<p>
-  <strong>Target amount:</strong>
-  <%= @kid.target_amount %>
-</p>
+      <tr>
+        <th>画像</th>
+        <td><%= @kid.image %></td>
+      </tr>
+    </table>
 
-<p>
-  <strong>User:</strong>
-  <%= @kid.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_kid_path(@kid) %> |
-<%= link_to 'Back', kids_path %>
+    <div class="linkbtn linkbtn_wide">
+      <%= link_to '編集', edit_kid_path(@kid), class: "linkbtn_wide"%>
+    </div>
+    <div class="linkbtn linkbtn_white">
+      <%= link_to '戻る', kids_path %>
+    </div>
+  </div>
+</div>

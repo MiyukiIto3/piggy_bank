@@ -25,7 +25,7 @@ class KidsController < ApplicationController
 
     respond_to do |format|
       if @kid.save
-        format.html { redirect_to kid_url(@kid), notice: "Kid was successfully created." }
+        format.html { redirect_to kid_url(@kid), notice: "登録しました。" }
         format.json { render :show, status: :created, location: @kid }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class KidsController < ApplicationController
   def update
     respond_to do |format|
       if @kid.update(kid_params)
-        format.html { redirect_to kid_url(@kid), notice: "Kid was successfully updated." }
+        format.html { redirect_to kid_url(@kid), notice: "更新しました。" }
         format.json { render :show, status: :ok, location: @kid }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class KidsController < ApplicationController
     @kid.destroy
 
     respond_to do |format|
-      format.html { redirect_to kids_url, notice: "Kid was successfully destroyed." }
+      format.html { redirect_to kids_url, notice: "削除しました。" }
       format.json { head :no_content }
     end
   end

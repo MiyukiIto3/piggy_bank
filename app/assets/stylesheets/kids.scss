@@ -3,24 +3,28 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .kids_table {
-  margin: 20px auto;
-  width: 60%;
+  margin: 10px auto;
+  width: 80%;
   border-collapse: collapse;
   text-align: left;
-  line-height: 28px;
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    font-size: 12px;
-  }
+  font-size: 12px;
+  font-weight: 400;
   th {
     width: 40%;
+    padding: 10px;
     border-bottom: 1px solid #e9e4d8;
   }
   td {
     width: 60%;
+    padding: 10px;
     border-bottom: 1px solid #e9e4d8;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 1.2vw;
   }
 }
 
-
-
+.action_last {
+  margin-top: 20px;
+}
