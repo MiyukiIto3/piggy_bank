@@ -1,6 +1,6 @@
 <% provide(:title, "Login") %>
-<div class="devise_out">
-  <div class="devise_frame">
+<div class="out_frame">
+  <div class="inner_frame">
     <h2><%= t('.sign_in') %></h2>
     <div class="devise_inner">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,10 +23,10 @@
         <% end %>
 
         <div class="actions">
-          <%= f.submit t('.sign_in'), class: "btn_submit" %>
+          <%= f.submit t('.sign_in'), class: "btn btn_submit" %>
         </div>
       <% end %>
-      <div class="linkbtn_white">
+      <div class="linkbtn linkbtn_white">
         <%= render "devise/shared/links" %>
       </div>
     </div>
