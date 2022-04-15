@@ -28,3 +28,33 @@
 .action_last {
   margin-top: 20px;
 }
+
+.kids_image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.image_field {
+  display: block;
+}
+
+#image { 
+  display: none;
+}
+
+.btn_image_upload {
+  display: block;
+  width: 100px;
+  text-align: center;
+  background-color: #ebebeb;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 12px;
+  margin-top: 10px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2vw;
+  }
+}

@@ -14,6 +14,24 @@
 
     <div class="field">
       <tr>
+        <th><%= form.label :画像 %></th>
+        <td>
+          <% if @kid.image.attached? %>
+            <%= image_tag @kid.image, class: "kids_image" %>
+          <% else %>
+            <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
+          <% end %>
+
+          <label for="image">
+            <span class="btn_image_upload">画像を選択</span><%= form.file_field :image, id: "image" %>
+          </label>
+          <div id="file-name"></div>
+        </td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
         <th><%= form.label :名前 %></th>
         <td><%= form.text_field :name, class: "input_form wide" %></td>
       </tr>
@@ -46,11 +64,6 @@
     </div>
 
   </table>
-
-  <div class="field">
-    <h5><%= form.label :画像 %></h5>
-    <%= form.file_field :image %>
-  </div>
 
   <%= form.hidden_field :user_id %>
 

@@ -1,6 +1,11 @@
 <% provide(:title, "Kids") %>
 <div class="out_frame">
   <div class="inner_frame">
+    <% if @kid.image.attached? %>
+      <%= image_tag @kid.image, class: "kids_image" %>
+    <% else %>
+      <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
+    <% end %>
 
     <table class="kids_table">
       <tr>
@@ -21,11 +26,6 @@
       <tr>
         <th>目標金額</th>
         <td><%= "#{@kid.target_amount}円" %></td>
-      </tr>
-
-      <tr>
-        <th>画像</th>
-        <td><%= @kid.image %></td>
       </tr>
     </table>
 

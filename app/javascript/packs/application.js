@@ -13,3 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import '@fortawesome/fontawesome-free/js/all';
+
+require("jquery")
+require("kids.js")
