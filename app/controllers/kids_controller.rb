@@ -3,7 +3,8 @@ class KidsController < ApplicationController
 
   # GET /kids or /kids.json
   def index
-    @kids = Kid.all
+    @user = User.find(current_user.id)
+    @kids = @user.kids
   end
 
   # GET /kids/1 or /kids/1.json

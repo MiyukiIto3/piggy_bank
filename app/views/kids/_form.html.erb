@@ -59,13 +59,13 @@
     <div class="field">
       <tr>
         <th><%= form.label :目標金額 %></th>
-        <td><%= form.number_field :target_amount, class: "input_form wide" %></td>
+        <td><%= form.text_field :target_amount, class: "input_form wide" %></td>
       </tr>
     </div>
 
   </table>
 
-  <%= form.hidden_field :user_id %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions action_last">
     <%=  form.submit '登録', class: "btn btn_submit" %>
