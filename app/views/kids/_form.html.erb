@@ -1,7 +1,7 @@
 <%= form_with(model: kid) do |form| %>
   <% if kid.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(kid.errors.count, "error") %> prohibited this kid from being saved:</h2>
+      <h2><%= pluralize(kid.errors.count, "箇所") %> 入力が正しくありません。</h2>
       <ul>
         <% kid.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -32,14 +32,14 @@
 
     <div class="field">
       <tr>
-        <th><%= form.label :名前 %></th>
+        <th class="after_required"><%= form.label :名前 %></th>
         <td><%= form.text_field :name, class: "input_form wide" %></td>
       </tr>
     </div>
 
     <div class="field">
       <tr>
-        <th><%= form.label :性別 %></th>
+        <th class="after_required"><%= form.label :性別 %></th>
         <td>
           <%= form.radio_button :sex, :男の子 %>
           <%= form.label :男の子 %>
@@ -51,14 +51,14 @@
 
     <div class="field">
       <tr>
-        <th><%= form.label :欲しいもの %></th>
+        <th class="after_required"><%= form.label :欲しいもの %></th>
         <td><%= form.text_field :target, class: "input_form wide" %></td>
       </tr>
     </div>
 
     <div class="field">
       <tr>
-        <th><%= form.label :目標金額 %></th>
+        <th class="after_number"><%= form.label :目標金額 %></th>
         <td><%= form.text_field :target_amount, class: "input_form wide" %></td>
       </tr>
     </div>
