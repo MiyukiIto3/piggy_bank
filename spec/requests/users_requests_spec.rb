@@ -46,7 +46,7 @@ RSpec.describe "Users", type: :request do
 
   describe "アカウント確認" do
     let!(:user) { create :user }
-    let!(:other) { create :other }
+    let!(:user2) { create :user2 }
 
     before do
       sign_in user
@@ -60,7 +60,7 @@ RSpec.describe "Users", type: :request do
     it "アカウント確認画面が表示されること" do
       expect(response.body).to include "アカウント"
       expect(response.body).to include user.email
-      expect(response.body).not_to include other.email
+      expect(response.body).not_to include user2.email
     end
   end
 

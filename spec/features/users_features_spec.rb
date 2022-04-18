@@ -54,7 +54,7 @@ RSpec.feature "Users", type: :feature do
 
   describe "ログイン" do
     let!(:user) { create :user }
-    let!(:other) { create :other }
+    let!(:user2) { create :user2 }
 
     before do
       visit new_user_session_path
@@ -86,7 +86,7 @@ RSpec.feature "Users", type: :feature do
 
     it "パスワードが不正の場合、ログインに失敗しエラーメッセージが表示されること" do
       fill_in "メールアドレス", with: user.email
-      fill_in "パスワード", with: other.password
+      fill_in "パスワード", with: user2.password
       click_button "ログイン"
       expect(page).to have_content "メールアドレスまたはパスワードが違います。"
       expect(current_path).to eq new_user_session_path
@@ -95,7 +95,7 @@ RSpec.feature "Users", type: :feature do
 
   describe "アカウント編集" do
     let!(:user) { create :user }
-    let!(:other) { create :other }
+    let!(:user2) { create :user2 }
 
     before do
       sign_in user
@@ -146,7 +146,7 @@ RSpec.feature "Users", type: :feature do
       fill_in "メールアドレス", with: user.email
       fill_in "パスワード", with: "123456"
       fill_in "パスワード （確認用）", with: "123456"
-      fill_in "現在のパスワード", with: other.password
+      fill_in "現在のパスワード", with: user2.password
       click_button "更新"
       expect(page).to have_content "エラーが発生したため ユーザー は保存されませんでした。"
       expect(current_path).to eq user_registration_path
