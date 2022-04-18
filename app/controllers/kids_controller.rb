@@ -1,5 +1,5 @@
 class KidsController < ApplicationController
-  before_action :set_kid, only: %i[ show edit update destroy ]
+  before_action :set_kid, only: %i(show edit update destroy)
 
   # GET /kids or /kids.json
   def index
@@ -59,13 +59,14 @@ class KidsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_kid
-      @kid = Kid.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def kid_params
-      params.require(:kid).permit(:name, :sex, :image, :target, :target_amount, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_kid
+    @kid = Kid.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def kid_params
+    params.require(:kid).permit(:name, :sex, :image, :target, :target_amount, :user_id)
+  end
 end
