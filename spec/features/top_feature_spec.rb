@@ -45,7 +45,10 @@ RSpec.feature "Tops", type: :feature do
         expect(current_path).to eq users_account_path
       end
 
-      it "Kids リンク先が正しいこと"
+      it "Kids リンク先が正しいこと" do
+        click_link "Kids"
+        expect(current_path).to eq kids_path
+      end
 
       it "Logout リンク先が正しいこと" do
         click_link "Logout"

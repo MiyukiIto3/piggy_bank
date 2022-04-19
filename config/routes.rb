@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :kids
   root 'homes#top'
   get 'users/account' => 'users#account' #設定/アカウント画面
 

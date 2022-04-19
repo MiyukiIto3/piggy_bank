@@ -34,6 +34,7 @@ li {
   line-height: 20px;
   font-size: 12px;
   font-weight: 200;
+  @media screen and (max-width: 767px) { font-size: 1.2vw; }
 }
 
 .notice {
@@ -193,6 +194,75 @@ footer {
   margin: 0 auto;
 }
 
+// サインイン＆ログイン＆ログアウト画面、アカウント詳細画面、子供情報画面
+
+.out_frame {
+  min-height: 100vh;
+  background: #f7f1e4;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  text-align: center;
+  color: #52616f;
+  font-weight: 400;
+  h2 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size:16px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    h2 {
+      font-size: 2.4VW;
+    }
+    h5 {
+      font-size:1.6VW;
+    }
+  }
+}
+
+.inner_frame {
+  max-width: 600px;
+  padding: 24px;
+  margin: 16px auto;
+  background: #f7f1e4;
+  border-radius: 4px;
+  box-shadow: #52616F 0px 1px 3px 0px;
+  @media screen and (max-width: 767px) { max-width: 280px; }
+}
+
+.field {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  width: auto;
+  height: auto;
+  color: #52616F;
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.4vw;
+  }
+}
+
+.actions {
+  line-height: 1.4vw;
+}
+
+#error_explanation {
+  h2 {
+    font-size: 1.4vw;
+    color: #f06c64;
+  }
+}
+
+// 新規登録画面 デバイスによるクラス作成打ち消し
+
+.field_with_errors {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
 // 入力フォーム
 
 .input_form {
@@ -200,6 +270,10 @@ footer {
   width: 80%;
   border: 1px solid #ced4da;
   border-radius: 5px;
+}
+
+.wide {
+  width: 100%;
 }
 
 // 入力フォーム 文章
@@ -211,12 +285,10 @@ footer {
   border-radius: 5px;
 }
 
-// 緑ボタン・ワイド（submit用）
+// 緑ボタン・ワイド
 
-.btn_submit {
+.btn {
   font-size: 14px;
-  background: #52616f;
-  color: white;
   height: 32px;
   width: 80%;
   border: none;
@@ -226,57 +298,95 @@ footer {
   &:hover {
     opacity: 0.7;
   }
+  @media screen and (max-width: 767px) {
+    font-size: 1.4vw;
+  }
+}
+
+// 送信ボタン
+
+.btn_submit {
+  background: #52616f;
+  color: white;
 }
 
 // 削除ボタン
 
 .btn_delete {
-  font-size: 14px;
   background: darkgray;
   color: white;
+}
+
+.linkbtn {
+  font-size: 14px;
+  margin: 10px auto;
+  line-height: 32px;
   height: 32px;
-  width: 80%;
-  border: none;
   border-radius: 5px;
-  margin-top: 50px;
-  margin-bottom: 10px;
   &:hover {
     opacity: 0.7;
   }
+  @media screen and (max-width: 767px) {
+    font-size: 1.4vw;
+  }
 }
 
-// 白ボタン・ワイド（submit用）
+// 緑ボタン・ワイド
 
-.linkbtn_white {
-  font-size: 14px;
-  margin: 0 auto;
-  line-height: 32px;
-  background: white;
-  color: #52616f;
-  height: 32px;
-  width: 80%;
-  border: 1px solid #52616f;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-// 緑ボタン小
-
-.btn_s {
+.linkbtn_wide {
   background: #52616f;
   color: white;
-  height: 32px;
-  width: 120px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  &:hover {
-    opacity: 0.7;
-  } 
+  width: 80%;
+}
+
+
+// 白ボタン・ワイド
+
+.linkbtn_white {
+  background: white;
+  color: #52616f;
+  width: 80%;
+  border: 1px solid #52616f;
+}
+
+// 子供追加ボタン・ワイド
+
+.linkbtn_add_kids {
+  background: white;
+  color: #52616f;
+  max-width: 600px;
+  border: 1.5px solid #52616f;
+  margin-bottom: 20px;
+  @media screen and (max-width: 767px) { max-width: 280px; }
+}
+
+// 緑ボタン
+
+.linkbtn_s {
+  background: #52616f;
+  color: white;
+  width: 100px;
+  display: inline-block;
+  @media screen and (max-width: 767px) {
+    display: block;
+    width: 100%;
+  }
 }
 
 .btn_hidden {
   display: none;
+}
+
+// 注釈
+
+.after_required::after {
+  content: "※必須";
+  color: #f06c64;
+  padding-left: 4px;
+}
+
+.after_number::after {
+  content: "※数字";
+  color: blue;
+  padding-left: 4px;
 }

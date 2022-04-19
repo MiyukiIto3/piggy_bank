@@ -1,0 +1,33 @@
+<% provide(:title, "Kids") %>
+<div class="out_frame">
+  <div class="linkbtn linkbtn_add_kids">
+    <%= link_to 'お子様を追加する', new_kid_path %>
+  </div>
+  <% @kids.each do |kid| %>
+    <div class="inner_frame">
+      <h2 class="kids_profile_title"><%= kid.name %></h2>
+
+      <table class="kids_table">
+        <tr>
+          <th>性別</th>
+          <td><%= kid.sex %></td>
+        </tr>
+        <tr>
+          <th>欲しいもの</th>
+          <td><%= kid.target %></td>
+        </tr>
+        <tr>
+          <th>目標金額</th>
+          <td><%= "#{kid.target_amount}円" %></td>
+        </tr>
+      </table>
+
+      <div class="kids_link">
+        <%= link_to '詳細', kid, class: "linkbtn linkbtn_s" %>
+        <%= link_to '編集', edit_kid_path(kid), class: "linkbtn linkbtn_s" %>
+        <%= link_to '削除', kid, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "linkbtn linkbtn_s" %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

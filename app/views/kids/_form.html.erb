@@ -1,0 +1,73 @@
+<%= form_with(model: kid) do |form| %>
+  <% if kid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kid.errors.count, "箇所") %> 入力が正しくありません。</h2>
+      <ul>
+        <% kid.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="kids_table">
+
+    <div class="field">
+      <tr>
+        <th><%= form.label :画像 %></th>
+        <td>
+          <% if @kid.image.attached? %>
+            <%= image_tag @kid.image, class: "kids_image" %>
+          <% else %>
+            <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
+          <% end %>
+
+          <label for="image">
+            <span class="btn_image_upload">画像を選択</span><%= form.file_field :image, id: "image" %>
+          </label>
+          <div id="file-name"></div>
+        </td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
+        <th class="after_required"><%= form.label :名前 %></th>
+        <td><%= form.text_field :name, class: "input_form wide" %></td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
+        <th class="after_required"><%= form.label :性別 %></th>
+        <td>
+          <%= form.radio_button :sex, :男の子 %>
+          <%= form.label :男の子 %>
+          <%= form.radio_button :sex, :女の子 %>
+          <%= form.label :女の子 %>
+        </td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
+        <th class="after_required"><%= form.label :欲しいもの %></th>
+        <td><%= form.text_field :target, class: "input_form wide" %></td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
+        <th class="after_number"><%= form.label :目標金額 %></th>
+        <td><%= form.text_field :target_amount, class: "input_form wide" %></td>
+      </tr>
+    </div>
+
+  </table>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions action_last">
+    <%=  form.submit '登録', class: "btn btn_submit" %>
+  </div>
+<% end %>
