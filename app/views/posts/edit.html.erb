@@ -1,0 +1,14 @@
+<% provide(:title, "Post") %>
+<div class="out_frame">
+  <div class="inner_frame">
+    <h2>なおす</h2>
+
+    <%= render 'form', post: @post, display: true %>
+
+    <%= form_with model: @post, url: posts_path, method: :get do |f| %>
+      <%= f.hidden_field :kid_id, value: @post.kid_id %>
+      <%= f.submit 'なおさずにもどる', class: "btn btn_white_kids" %>
+    <% end %>
+  </div>
+</div>
+

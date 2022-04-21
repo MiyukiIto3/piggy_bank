@@ -1,10 +1,16 @@
 ja:
-      activerecord:
-        models:
-          kid: お子様
-        attributes:
-          kid:
-            name: 名前
-            sex: 性別
-            target: 欲しいもの
-            target_amount: 目標金額
+  activerecord:
+    models:
+      kid: お子様
+    attributes:
+      kid:
+        name: 名前
+        sex: 性別
+        target: 欲しいもの
+        target_amount: 目標金額
+      post:
+        amount: 金額
+        description: 説明
+        date: 日付
+        post_type: 種類
+

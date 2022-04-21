@@ -1,0 +1,10 @@
+<% provide(:title, "Post") %>
+<div class="out_frame">
+  <div class="inner_frame">
+    <h2>入力する</h2>
+
+    <%= render 'form', post: @post %>
+
+    <%= button_to 'やりなおす', homes_select_kid_path, method: :get, class: "btn btn_white_kids" %>
+  </div>
+</div>

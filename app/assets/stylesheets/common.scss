@@ -34,7 +34,9 @@ li {
   line-height: 20px;
   font-size: 12px;
   font-weight: 200;
-  @media screen and (max-width: 767px) { font-size: 1.2vw; }
+  @media screen and (max-width: 767px) { 
+    font-size: 1.2vw;
+  }
 }
 
 .notice {
@@ -175,7 +177,9 @@ nav {
       transition-duration: 0.25s;
     }
   }
-  @media screen and (min-width: 767px) {display: none;}
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
 }
 
 // フッター
@@ -229,7 +233,9 @@ footer {
   background: #f7f1e4;
   border-radius: 4px;
   box-shadow: #52616F 0px 1px 3px 0px;
-  @media screen and (max-width: 767px) { max-width: 280px; }
+  @media screen and (max-width: 767px) {
+    max-width: 280px;
+  }
 }
 
 .field {
@@ -285,10 +291,11 @@ footer {
   border-radius: 5px;
 }
 
-// 緑ボタン・ワイド
+// ボタン・ワイド
 
 .btn {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 800;
   height: 32px;
   width: 80%;
   border: none;
@@ -299,8 +306,36 @@ footer {
     opacity: 0.7;
   }
   @media screen and (max-width: 767px) {
-    font-size: 1.4vw;
+    font-size: 1.6vw;
   }
+}
+
+//  TOP画面スタートボタン
+
+.btn_start {
+  margin-top: 40px;
+  background: #f9df7e;
+  color: #905d1b;
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+}
+
+.btn_submit_kids {
+  background: #f9df7e;
+  color: #905d1b;
+}
+
+.btn_submit_kids_icon {
+  background: #f9df7e;
+  color: #905d1b;
+  height: 80px;
+}
+
+.btn_white_kids {
+  background: white;
+  color: #905d1b;
+  border: 1px solid #f9df7e;
 }
 
 // 送信ボタン
@@ -318,7 +353,7 @@ footer {
 }
 
 .linkbtn {
-  font-size: 14px;
+  font-size: 16px;
   margin: 10px auto;
   line-height: 32px;
   height: 32px;
@@ -327,7 +362,7 @@ footer {
     opacity: 0.7;
   }
   @media screen and (max-width: 767px) {
-    font-size: 1.4vw;
+    font-size: 1.6vw;
   }
 }
 
@@ -338,7 +373,6 @@ footer {
   color: white;
   width: 80%;
 }
-
 
 // 白ボタン・ワイド
 
@@ -357,7 +391,9 @@ footer {
   max-width: 600px;
   border: 1.5px solid #52616f;
   margin-bottom: 20px;
-  @media screen and (max-width: 767px) { max-width: 280px; }
+  @media screen and (max-width: 767px) {
+    max-width: 280px;
+  }
 }
 
 // 緑ボタン
@@ -371,6 +407,15 @@ footer {
     display: block;
     width: 100%;
   }
+}
+
+// 黄ボタン
+
+.linkbtn_yellow_s {
+  background: #f9df7e;
+  color: #905d1b;
+  width: 60px;
+  display: inline-block;
 }
 
 .btn_hidden {
@@ -389,4 +434,8 @@ footer {
   content: "※数字";
   color: blue;
   padding-left: 4px;
+}
+
+.hidden {
+  display: none;
 }
