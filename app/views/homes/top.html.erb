@@ -4,5 +4,8 @@
   <div class="top_messarge">
     <h1>Piggy Bank</h1>
     <p>おやこでつかう<br>はじめての貯金箱</p>
+    <% if user_signed_in? %>
+      <%= button_to 'はじめる', homes_select_kid_path, method: :get, class: "btn btn_start" %>
+    <% end %>
   </div>
 </div>
