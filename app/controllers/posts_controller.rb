@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @total_amount = @total_income - @total_outgo
 
     if @kid.target_amount > @total_amount
-      @shortage = @total_amount - @kid.target_amount
+      @shortage = @kid.target_amount - @total_amount
       @message = "あと#{@shortage.to_s(:delimited)}円で、#{@kid.target} が買えます。"
     else
       @message = "#{@kid.target}が買えます。"
