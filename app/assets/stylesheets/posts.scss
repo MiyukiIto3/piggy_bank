@@ -51,3 +51,22 @@
     width: 96%;
   }
 }
+
+.pagination {
+  font-size: 16px;
+  margin: auto;
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+  a {
+    padding: 4px;
+    text-align: center;
+    color: #97b0be;
+  }
+  span.current {
+    padding: 4px;
+    text-align: center;
+    color: #4b5f6a;;
+  }
+}
+

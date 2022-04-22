@@ -5,13 +5,15 @@ class PostsController < ApplicationController
   def index
     @post = Post.new(post_params)
     @kid = Kid.find(@post.kid_id)
-    @posts = Post.where(kid_id: @post.kid_id)
+    @posts = Post.where(kid_id: @post.kid_id).order(date: :desc).page(params[:page]).per(10)
+
     @total_income = Post.where(kid_id: @post.kid_id).where(post_type: "income").sum(:amount)
     @total_outgo = Post.where(kid_id: @post.kid_id).where(post_type: "outgo").sum(:amount)
     @total_amount = @total_income - @total_outgo
+
     if @kid.target_amount > @total_amount
       @shortage = @total_amount - @kid.target_amount
-      @message = "あと#{@shortage}円で、#{@kid.target} が買えます。"
+      @message = "あと#{@shortage.to_s(:delimited)}円で、#{@kid.target} が買えます。"
     else
       @message = "#{@kid.target}が買えます。"
     end
