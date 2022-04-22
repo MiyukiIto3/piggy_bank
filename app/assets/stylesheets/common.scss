@@ -404,8 +404,7 @@ footer {
   width: 100px;
   display: inline-block;
   @media screen and (max-width: 767px) {
-    display: block;
-    width: 100%;
+    width: 20%;
   }
 }
 
@@ -416,6 +415,11 @@ footer {
   color: #905d1b;
   width: 60px;
   display: inline-block;
+  @media screen and (max-width: 767px) {
+    width: 40px;
+    line-height: 24px;
+    height: 24px;
+  }
 }
 
 .btn_hidden {
@@ -436,6 +440,14 @@ footer {
   padding-left: 4px;
 }
 
+// 隠す
+
 .hidden {
   display: none;
+}
+
+.sp_hidden {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 }

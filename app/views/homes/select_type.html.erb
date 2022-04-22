@@ -7,19 +7,25 @@
       <%= f.hidden_field :user_id, value: @post.user_id %>
       <%= f.hidden_field :kid_id, value: @post.kid_id %>
       <%= f.hidden_field :post_type, value: "income" %>
-      <%= f.submit 'お金をもらった', class: "btn btn_submit_kids" %>
+      <%= button_tag type: "submit", class: "btn btn_submit_kids" do %>
+        <i class="fa-solid fa-download"></i> お金をもらった
+      <% end %>
     <% end %>
 
     <%= form_with model: @post, url: new_post_path, method: :get do |f| %>
       <%= f.hidden_field :user_id, value: @post.user_id %>
       <%= f.hidden_field :kid_id, value: @post.kid_id %>
       <%= f.hidden_field :post_type, value: "outgo" %>
-      <%= f.submit 'お金をつかった', class: "btn btn_submit_kids" %>
+      <%= button_tag type: "submit", class: "btn btn_submit_kids" do %>
+        <i class="fa-solid fa-upload"></i> お金をつかった
+      <% end %>
     <% end %>
 
     <%= form_with model: @post, url: posts_path, method: :get do |f| %>
       <%= f.hidden_field :kid_id, value: @post.kid_id %>
-      <%= f.submit '貯金箱をみる', class: "btn btn_submit_kids" %>
+      <%= button_tag type: "submit", class: "btn btn_submit_kids" do %>
+        <i class="fa-solid fa-piggy-bank"></i> 貯金箱をみる
+      <% end %>
     <% end %>
 
   </div>

@@ -1,7 +1,7 @@
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "箇所") %> 入力が正しくありません。</h2>
+      <h2><%= pluralize(post.errors.count, "つ") %> まちがっています</h2>
 
       <ul>
         <% post.errors.each do |error| %>

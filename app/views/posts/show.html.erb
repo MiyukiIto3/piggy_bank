@@ -3,17 +3,17 @@
   <div class="inner_frame">
     <table class="post_table">
       <tr>
-        <th>日付</th>
+        <th>いつ</th>
         <td><%= l @post.date %></td>
       </tr>
 
       <tr>
-        <th>金額</th>
+        <th>いくら</th>
         <td><%= "#{@post.amount.to_s(:delimited)}円" %></td>
       </tr>
 
       <tr>
-        <th>種類</th>
+        <th>しゅるい</th>
         <% if @post.post_type == "income" %>
           <td>ふえた</td>
         <% elsif  @post.post_type == "outgo"  %>
@@ -22,16 +22,15 @@
       </tr>
 
       <tr>
-        <th>説明</th>
+        <th>せつめい</th>
         <td><%= @post.description %></td>
       </tr>
     </table>
 
-    <%= button_to '変更する', edit_post_path(@post), method: :get, class: "btn btn_submit_kids" %>
     <%= form_with model: @post, url: posts_path, method: :get do |f| %>
       <%= f.hidden_field :kid_id, value: @post.kid_id %>
-      <%= f.submit '貯金箱を見る', class: "btn btn_submit_kids" %>
+      <%= f.submit '貯金箱をみる', class: "btn btn_submit_kids" %>
     <% end %>
-    <%= button_to '新しく入力する', homes_select_kid_path, method: :get, class: "btn btn_white_kids" %>
+    <%= button_to 'あたらしく入力する', homes_select_kid_path, method: :get, class: "btn btn_white_kids" %>
   </div>
 </div>

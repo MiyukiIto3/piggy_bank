@@ -9,8 +9,11 @@ ja:
         target: 欲しいもの
         target_amount: 目標金額
       post:
-        amount: 金額
-        description: 説明
-        date: 日付
-        post_type: 種類
-
+        amount: 「いくら」
+        description: 「せつめい」
+        date: 「いつ」
+        post_type: 「しゅるい」
+  date:
+      formats:
+        default: "%Y/%m/%d"
+        short: "%m/%d"
