@@ -62,7 +62,7 @@ RSpec.describe Kid, type: :model do
 
   describe "リレーションのテスト" do
     context "user対kidの関係" do
-      it "１対多となっている" do
+      it "１対多となっていること" do
         expect(Kid.reflect_on_association(:user).macro).to eq :belongs_to
       end
     end
