@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   def index
     @post = Post.new(post_params)
     @kid = Kid.find(@post.kid_id)
-    @posts = Post.where(kid_id: @post.kid_id).order(date: :desc).page(params[:page]).per(10)
+
+    @q = Post.where(kid_id: @post.kid_id).order(date: :desc).ransack(params[:q])
+    @posts = @q.result(distinct: true).page(params[:page]).per(10)
 
     @total_income = Post.where(kid_id: @post.kid_id).where(post_type: "income").sum(:amount)
     @total_outgo = Post.where(kid_id: @post.kid_id).where(post_type: "outgo").sum(:amount)

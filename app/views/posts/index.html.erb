@@ -7,7 +7,7 @@
     <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
   <% end %>
 
-  <h2><%= " #{@kid.name}#{kid_honorific(@kid.sex)}の貯金箱 " %><i class="fa-solid fa-piggy-bank"></i></h2>
+  <h2><%= "#{@kid.name}#{kid_honorific(@kid.sex)}の貯金箱" %><i class="fa-solid fa-piggy-bank"></i></h2>
   <h2><%= "#{@total_amount.to_s(:delimited)}円" %></h2>
   <h5><%= @message %></h5>
 
@@ -17,8 +17,8 @@
         <tr>
           <th class="hidden">User</th>
           <th class="hidden">Kid</th>
-          <th>いつ</th>
-          <th>しゅるい</th>
+          <th><%= sort_link(@q, :date, "いつ") %></th>
+          <th><%= sort_link(@q, :post_type, [:post_type, 'date desc'], "しゅるい") %></th>
           <th>いくら</th>
           <th class="sp_hidden">せつめい</th>
           <th colspan="3"></th>
