@@ -47,13 +47,13 @@
         </tr>
       </div>
     <% else %>
-      <%= form.hidden_field :post_type, value: @post.post_type %>
+      <%= form.hidden_field :post_type, value: post.post_type %>
     <% end %>
 
   </table>
 
-  <%= form.hidden_field :user_id, value: @post.user_id %>
-  <%= form.hidden_field :kid_id, value: @post.kid_id %>
+  <%= form.hidden_field :user_id, value: post.user_id %>
+  <%= form.hidden_field :kid_id, value: post.kid_id %>
   
 
   <div class="actions">
