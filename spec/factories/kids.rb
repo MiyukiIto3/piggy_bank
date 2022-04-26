@@ -14,4 +14,12 @@ FactoryBot.define do
     target_amount { 2000 }
     user
   end
+
+  factory :kid3, class: "Kid" do
+    name { "kid3" }
+    sex { 0 }
+    target { "target3" }
+    target_amount { 3000 }
+    user
+  end
 end
