@@ -1,17 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
+  # ログインユーザーの選択中の子供の投稿（income）
   let!(:user) { create :user }
   let!(:kid) { create :kid, user: user }
   let!(:post) { create :post, user: user, kid: kid }
 
+  # ログインユーザーの他の子供の投稿
   let!(:kid2) { create :kid2, user: user }
   let!(:post2)  { create :post2, user: user, kid: kid2 }
 
+  # 他のユーザーの子供の投稿
   let!(:user2) { create :user2 }
   let!(:kid3) { create :kid3, user: user2 }
   let!(:post3)  { create :post3, user: user2, kid: kid3 }
 
+  # ログインユーザーの選択中の子供の投稿（outgo）
   let!(:post4) { create :post4, user: user, kid: kid }
 
   describe "一覧" do
