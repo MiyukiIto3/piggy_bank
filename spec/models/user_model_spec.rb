@@ -58,13 +58,13 @@ RSpec.describe User, type: :model do
 
   describe "リレーションのテスト" do
     context "user対kidの関係" do
-      it "多対１となっていること" do
+      it "1対多となっていること" do
         expect(User.reflect_on_association(:kids).macro).to eq :has_many
       end
     end
 
     context "user対postの関係" do
-      it "多対１となっていること" do
+      it "1対多となっていること" do
         expect(User.reflect_on_association(:posts).macro).to eq :has_many
       end
     end
