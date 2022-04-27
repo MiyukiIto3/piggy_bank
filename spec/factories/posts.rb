@@ -20,7 +20,7 @@ FactoryBot.define do
   factory :post3, class: "Post" do
     date { "2022-01-03" }
     post_type { "income" }
-    amount { 300 }
+    amount { 30000 }
     description { "description3" }
     user
     kid
