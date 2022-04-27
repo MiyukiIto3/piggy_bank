@@ -16,8 +16,8 @@
       <tr>
         <th><%= form.label :画像 %></th>
         <td>
-          <% if @kid.image.attached? %>
-            <%= image_tag @kid.image, class: "kids_image" %>
+          <% if kid.image.attached? %>
+            <%= image_tag kid.image, class: "kids_image" %>
           <% else %>
             <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
           <% end %>
@@ -59,7 +59,7 @@
     <div class="field">
       <tr>
         <th class="after_number"><%= form.label :目標金額 %></th>
-        <td><%= form.text_field :target_amount, class: "input_form wide" %></td>
+        <td><%= form.number_field :target_amount, class: "input_form wide" %></td>
       </tr>
     </div>
 

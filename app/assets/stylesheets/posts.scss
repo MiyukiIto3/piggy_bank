@@ -1,0 +1,72 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// .post_index_table { 
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//   }
+// }
+
+.post_table {
+  margin: 10px auto;
+  width: 80%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  th {
+    width: 30%;
+    padding: 10px;
+    border-bottom: 1px solid #e9e4d8;
+  }
+  td {
+    width: 70%;
+    padding: 10px;
+    border-bottom: 1px solid #e9e4d8;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 1.2vw;
+  }
+}
+
+.post_index_table {
+  margin: 40px auto;
+  width: 80%;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-weight: 400;
+  th, td{
+    padding: 4px;
+    border-bottom: 1px solid #e9e4d8;
+  }
+  th:nth-child(3){ width: 16%; }
+  th:nth-child(4){ width: 16%; }
+  th:nth-child(5){ width: 16%; }
+  th:nth-child(6){ width: auto; }
+  th:nth-child(n+7){ width: 8%; }
+  @media screen and (max-width: 767px) {
+    font-size: 1.0vw;
+    width: 96%;
+  }
+}
+
+.pagination {
+  font-size: 16px;
+  margin: auto;
+  width: 100%;
+  display: block;
+  justify-content: flex-start;
+  a {
+    padding: 4px;
+    text-align: center;
+    color: #97b0be;
+  }
+  span.current {
+    padding: 4px;
+    text-align: center;
+    color: #4b5f6a;;
+  }
+}
+

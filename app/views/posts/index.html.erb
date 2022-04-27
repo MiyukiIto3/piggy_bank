@@ -1,0 +1,52 @@
+<% provide(:title, "Post") %>
+<div class="out_frame">
+
+  <% if @kid.image.attached? %>
+    <%= image_tag @kid.image, class: "kids_image" %>
+  <% else %>
+    <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
+  <% end %>
+
+  <h2><%= "#{@kid.name}#{kid_honorific(@kid.sex)}の貯金箱" %><i class="fa-solid fa-piggy-bank"></i></h2>
+  <h2><%= "#{@total_amount.to_s(:delimited)}円" %></h2>
+  <h5><%= @message %></h5>
+
+  <div class="post_index">
+    <table class="post_index_table">
+      <thead>
+        <tr>
+          <th class="hidden">User</th>
+          <th class="hidden">Kid</th>
+          <th><%= sort_link(@q, :date, "いつ") %></th>
+          <th><%= sort_link(@q, :post_type, [:post_type, 'date desc'], "しゅるい") %></th>
+          <th>いくら</th>
+          <th class="sp_hidden">せつめい</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td class="hidden"><%= post.user_id %></td>
+            <td class="hidden"><%= post.kid_id %></td>
+            <td><%= l post.date, format: :short %></td>
+            <% if post.post_type == "income" %>
+              <td>ふえた</td>
+            <% elsif  post.post_type == "outgo"  %>
+              <td>へった</td>
+            <% end %>
+            <td><%= "#{post.amount.to_s(:delimited)}円" %></td>
+            <td class="sp_hidden"><%= post.description %></td>
+            <td><%= link_to 'みる', post, class: "linkbtn linkbtn_yellow_s" %></td>
+            <td><%= link_to 'なおす', edit_post_path(post), class: "linkbtn linkbtn_yellow_s" %></td>
+            <td><%= link_to 'けす', post, method: :delete, data: { confirm: 'ほんとうに　けしますか？' }, class: "linkbtn linkbtn_yellow_s" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
+  <%= paginate @posts %>
+
+</div>

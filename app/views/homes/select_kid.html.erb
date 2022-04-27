@@ -1,0 +1,21 @@
+<% provide(:title, "Select") %>
+<div class="out_frame">
+  <div class="inner_frame">
+    <h2>なまえ</h2>
+    <% @kids.each do |kid| %>
+      <%= form_with model: @post, url: homes_select_type_path, method: :get do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :kid_id, value: kid.id %>
+        <%= button_tag type: :submit, class: "btn btn_submit_kids_icon" do %>
+          <% if kid.image.attached? %>
+            <%= image_tag kid.image, class: "kids_image_small" %>
+          <% else %>
+            <%= image_tag "default-kids_image.jpeg", class: "kids_image_small" %>
+          <% end %>
+          <h5><%= "#{kid.name} #{kid_honorific(kid.sex)}" %></h5>
+        <% end %> 
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

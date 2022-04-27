@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .kids_table {
-  margin: 10px auto;
+  margin: 10px auto 0 auto;
   width: 80%;
   border-collapse: collapse;
   text-align: left;
@@ -33,6 +33,13 @@
   height: 100px;
   width: 100px;
   border-radius: 50px;
+  object-fit: cover;
+}
+
+.kids_image_small {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
   object-fit: cover;
 }
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Homes", type: :request do
-  describe "トップ" do
+  describe "header" do
     context "ログインしてない場合" do
       before do
         get root_path
@@ -43,6 +43,73 @@ RSpec.describe "Homes", type: :request do
         expect(response.body).to include "Kids"
         expect(response.body).to include "Logout"
       end
+    end
+  end
+
+  describe "top" do
+    let(:user) { create :user }
+
+    context "ログインしていない場合" do
+      before do
+        get root_path
+      end
+
+      it "はじめるボタンが表示されないこと" do
+        expect(response.body).not_to include "はじめる"
+      end
+    end
+
+    context "ログイン中の場合" do
+      before do
+        sign_in user
+        get root_path
+      end
+
+      it "はじめるボタンが表示されること" do
+        expect(response.body).to include "はじめる"
+      end
+    end
+  end
+
+  describe "select_kid" do
+    let(:user) { create :user }
+    let(:kid) { create :kid, user: user }
+    let!(:user_kids) { create_list(:kid, 2, user: user) }
+
+    before do
+      sign_in user
+      get homes_select_kid_path
+    end
+
+    it "レスポンスが正常であること" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "ユーザーの子供の名前が人数分表示されること" do
+      user_kids[0..1].each do |user_kid|
+        expect(response.body).to include user_kid.name
+      end
+    end
+  end
+
+  describe "select_kid" do
+    let(:user) { create :user }
+    let!(:kid) { create :kid, user: user }
+    let!(:post_params) { attributes_for(:post) }
+
+    before do
+      sign_in user
+      get homes_select_type_path params: { post: post_params }
+    end
+
+    it "レスポンスが正常であること" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "投稿タイプ選択画面が表示されること" do
+      expect(response.body).to include "お金をもらった"
+      expect(response.body).to include "お金をつかった"
+      expect(response.body).to include "貯金箱をみる"
     end
   end
 end

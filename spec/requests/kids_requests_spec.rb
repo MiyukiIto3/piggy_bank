@@ -20,7 +20,7 @@ RSpec.describe "Kids", type: :request do
       expect(response.body).to include kid.name
       expect(response.body).to include kid.sex
       expect(response.body).to include kid.target
-      expect(response.body).to include kid.target_amount.to_s
+      expect(response.body).to include kid.target_amount.to_s(:delimited)
     end
 
     it "他のユーザーの子供情報が表示されないこと" do
@@ -42,7 +42,7 @@ RSpec.describe "Kids", type: :request do
       expect(response.body).to include kid.name
       expect(response.body).to include kid.sex
       expect(response.body).to include kid.target
-      expect(response.body).to include kid.target_amount.to_s
+      expect(response.body).to include kid.target_amount.to_s(:delimited)
     end
   end
 

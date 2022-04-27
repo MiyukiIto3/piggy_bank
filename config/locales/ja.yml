@@ -1,10 +1,19 @@
 ja:
-      activerecord:
-        models:
-          kid: お子様
-        attributes:
-          kid:
-            name: 名前
-            sex: 性別
-            target: 欲しいもの
-            target_amount: 目標金額
+  activerecord:
+    models:
+      kid: お子様
+    attributes:
+      kid:
+        name: 名前
+        sex: 性別
+        target: 欲しいもの
+        target_amount: 目標金額
+      post:
+        amount: 「いくら」
+        description: 「せつめい」
+        date: 「いつ」
+        post_type: 「しゅるい」
+  date:
+      formats:
+        default: "%Y/%m/%d"
+        short: "%m/%d"

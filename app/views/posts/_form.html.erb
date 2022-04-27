@@ -1,0 +1,62 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "つ") %> まちがっています</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="post_table">
+
+    <div class="field">
+      <tr>
+        <th><%= form.label :いつ %></th>
+        <td><%= form.date_select :date %></td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
+        <th><%= form.label :いくら %></th>
+        <td><%= form.number_field :amount, class: "input_form wide" %></td>
+      </tr>
+    </div>
+
+    <div class="field">
+      <tr>
+        <th><%= form.label :せつめい %></th>
+        <td><%= form.text_field :description, class: "input_form wide" %></td>
+      </tr>
+    </div>
+
+    <% if display == true %>
+      <div class="field">
+        <tr>
+          <th><%= form.label :しゅるい %></th>
+          <td>
+            <%= form.radio_button :post_type, :income %>
+            <%= form.label :ふえた %>
+            <%= form.radio_button :post_type, :outgo %>
+            <%= form.label :へった %>
+          </td>
+        </tr>
+      </div>
+    <% else %>
+      <%= form.hidden_field :post_type, value: post.post_type %>
+    <% end %>
+
+  </table>
+
+  <%= form.hidden_field :user_id, value: post.user_id %>
+  <%= form.hidden_field :kid_id, value: post.kid_id %>
+  
+
+  <div class="actions">
+    <%= form.submit 'OK', class: "btn btn_submit_kids"%>
+  </div>
+<% end %>
