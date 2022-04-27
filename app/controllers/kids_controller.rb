@@ -1,4 +1,5 @@
 class KidsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_kid, only: %i(show edit update destroy)
 
   # GET /kids or /kids.json
