@@ -321,6 +321,23 @@ footer {
   }
 }
 
+//  TOP画面ゲストログインボタン
+
+.btn_guest_login {
+  margin-top: 40px;
+  background: #97b0be;
+  color: #4b5f6a;
+  @media screen and (max-width: 767px) {
+    margin-top: 10px;
+  }
+}
+
+.button_to {
+  line-height: 32px;
+}
+
+//  kid情報送信ボタン
+
 .btn_submit_kids {
   background: #f9df7e;
   color: #905d1b;
