@@ -18,6 +18,7 @@ RSpec.describe "Homes", type: :request do
         expect(response.body).to include "Login"
         expect(response.body).not_to include "Account"
         expect(response.body).not_to include "Kids"
+        expect(response.body).not_to include "PiggyBank"
         expect(response.body).not_to include "Logout"
       end
     end
@@ -41,6 +42,7 @@ RSpec.describe "Homes", type: :request do
         expect(response.body).not_to include "Login"
         expect(response.body).to include "Account"
         expect(response.body).to include "Kids"
+        expect(response.body).to include "PiggyBank"
         expect(response.body).to include "Logout"
       end
     end

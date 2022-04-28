@@ -50,6 +50,11 @@ RSpec.feature "Tops", type: :feature do
         expect(current_path).to eq kids_path
       end
 
+      it "PiggyBank リンク先が正しいこと" do
+        click_link "PiggyBank"
+        expect(current_path).to eq homes_select_kid_path
+      end
+
       it "Logout リンク先が正しいこと" do
         click_link "Logout"
         expect(current_path).to eq root_path
