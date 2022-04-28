@@ -18,6 +18,7 @@ RSpec.describe "Homes", type: :request do
         expect(response.body).to include "Login"
         expect(response.body).not_to include "Account"
         expect(response.body).not_to include "Kids"
+        expect(response.body).not_to include "PiggyBank"
         expect(response.body).not_to include "Logout"
       end
     end
@@ -41,6 +42,7 @@ RSpec.describe "Homes", type: :request do
         expect(response.body).not_to include "Login"
         expect(response.body).to include "Account"
         expect(response.body).to include "Kids"
+        expect(response.body).to include "PiggyBank"
         expect(response.body).to include "Logout"
       end
     end
@@ -57,9 +59,46 @@ RSpec.describe "Homes", type: :request do
       it "はじめるボタンが表示されないこと" do
         expect(response.body).not_to include "はじめる"
       end
+
+      it "お子様登録ボタンが表示されないこと" do
+        expect(response.body).not_to include "お子様登録"
+      end
+
+      it "ログインボタンが表示されること" do
+        expect(response.body).to include "ログイン"
+      end
+
+      it "ゲストログインボタンが表示されること" do
+        expect(response.body).to include "ゲストログイン"
+      end
     end
 
-    context "ログイン中の場合" do
+    context "ログイン中かつ子供情報登録前の場合" do
+      before do
+        sign_in user
+        get root_path
+      end
+
+      it "はじめるボタンが表示されないこと" do
+        expect(response.body).not_to include "はじめる"
+      end
+
+      it "お子様登録ボタンが表示されること" do
+        expect(response.body).to include "お子様登録"
+      end
+
+      it "ログインボタンが表示されないこと" do
+        expect(response.body).not_to include "ログイン"
+      end
+
+      it "ゲストログインボタンが表示されないこと" do
+        expect(response.body).not_to include "ゲストログイン"
+      end
+    end
+
+    context "ログイン中かつ子供情報登録済みの場合" do
+      let!(:kid) { create :kid, user: user }
+
       before do
         sign_in user
         get root_path
@@ -67,6 +106,18 @@ RSpec.describe "Homes", type: :request do
 
       it "はじめるボタンが表示されること" do
         expect(response.body).to include "はじめる"
+      end
+
+      it "お子様登録ボタンが表示されないこと" do
+        expect(response.body).not_to include "お子様登録"
+      end
+
+      it "ログインボタンが表示されないこと" do
+        expect(response.body).not_to include "ログイン"
+      end
+
+      it "ゲストログインボタンが表示されないこと" do
+        expect(response.body).not_to include "ゲストログイン"
       end
     end
   end

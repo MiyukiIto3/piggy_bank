@@ -1,5 +1,12 @@
 class HomesController < ApplicationController
+  before_action :authenticate_user!, except: %i(top)
+
   def top
+    if user_signed_in?
+      @user = User.find(current_user.id)
+      @kids = @user.kids
+      @kids_count = @kids.size
+    end
   end
 
   def select_kid

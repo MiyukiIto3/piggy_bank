@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_post, only: %i(show edit update destroy)
 
   # GET /posts or /posts.json
@@ -68,7 +69,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "削除しました。" }
+      format.html { redirect_to homes_select_kid_path, notice: "削除しました。" }
       format.json { head :no_content }
     end
   end

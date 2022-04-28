@@ -4,8 +4,13 @@
   <div class="top_messarge">
     <h1>Piggy Bank</h1>
     <p>おやこでつかう<br>はじめての貯金箱</p>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && @kids_count == 0 %>
+      <%= button_to 'お子様登録', kids_path, method: :get, class: "btn btn_start" %>
+    <% elsif user_signed_in? && @kids_count > 0 %>
       <%= button_to 'はじめる', homes_select_kid_path, method: :get, class: "btn btn_start" %>
+    <% else %>
+      <%= button_to 'ログイン', new_user_session_path, method: :get, class: "btn btn_guest_login" %>
+      <%= button_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "btn btn_guest_login" %>
     <% end %>
   </div>
 </div>

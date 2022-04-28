@@ -50,6 +50,11 @@ RSpec.feature "Tops", type: :feature do
         expect(current_path).to eq kids_path
       end
 
+      it "PiggyBank リンク先が正しいこと" do
+        click_link "PiggyBank"
+        expect(current_path).to eq homes_select_kid_path
+      end
+
       it "Logout リンク先が正しいこと" do
         click_link "Logout"
         expect(current_path).to eq root_path
@@ -58,16 +63,49 @@ RSpec.feature "Tops", type: :feature do
   end
 
   describe "top" do
-    let(:user) { create :user }
+    context "ログインしてない場合" do
+      before do
+        visit root_path
+      end
 
-    before do
-      sign_in user
-      visit root_path
+      it "ログインボタン リンク先が正しいこと" do
+        click_on "ログイン"
+        expect(current_path).to eq new_user_session_path
+      end
+
+      it "ゲストログインボタン リンク先が正しいこと" do
+        click_on "ゲストログイン"
+        expect(current_path).to eq root_path
+      end
     end
 
-    it "はじめるボタン リンク先が正しいこと" do
-      click_on "はじめる"
-      expect(current_path).to eq homes_select_kid_path
+    context "ログイン中かつ子供情報登録前の場合" do
+      let(:user) { create :user }
+
+      before do
+        sign_in user
+        visit root_path
+      end
+
+      it "お子様登録ボタン リンク先が正しいこと" do
+        click_on "お子様登録"
+        expect(current_path).to eq kids_path
+      end
+    end
+
+    context "ログイン中かつ子供情報登録済みの場合" do
+      let(:user) { create :user }
+      let!(:kid) { create :kid, user: user }
+
+      before do
+        sign_in user
+        visit root_path
+      end
+
+      it "はじめるボタン リンク先が正しいこと" do
+        click_on "はじめる"
+        expect(current_path).to eq homes_select_kid_path
+      end
     end
   end
 
