@@ -12,7 +12,10 @@ RSpec.feature "Tops", type: :feature do
         expect(current_path).to eq root_path
       end
 
-      it "About リンク先が正しいこと"
+      it "About リンク先が正しいこと" do
+        click_link "About"
+        expect(current_path).to eq root_path
+      end
 
       it "Signup リンク先が正しいこと" do
         click_link "Signup"
@@ -38,7 +41,10 @@ RSpec.feature "Tops", type: :feature do
         expect(current_path).to eq root_path
       end
 
-      it "About リンク先が正しいこと"
+      it "About リンク先が正しいこと" do
+        click_link "About"
+        expect(current_path).to eq root_path
+      end
 
       it "Account リンク先が正しいこと" do
         click_link "Account"
