@@ -36,3 +36,37 @@
     }
   }
 }
+
+// アバウト画面
+
+.about {
+  background: #e9e4d8;
+  border-bottom: white 1px solid;
+  padding: 80px 160px;
+  @media screen and (max-width: 767px) {
+    padding: 30px 20px;
+  }
+}
+
+.about_messarge {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  h1 {
+    font-size: 3vw;
+    padding-bottom: 2vw;
+    color: #989181;
+  }
+  p {
+    font-size: 1.8vw;
+    color: #989181;
+  }
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 5vw;
+    }
+    p {
+      font-size: 2vw;
+    }
+  }
+}

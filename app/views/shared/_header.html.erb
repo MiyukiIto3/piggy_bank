@@ -11,7 +11,7 @@
     </label>
      <ul class="menu_box">
       <li><%= link_to 'Home', root_path, class: "menu_item" %></li>
-      <li><%= link_to 'About', "#", class: "menu_item" %></li>
+      <li><a class="menu_item" href="#about">About</a></li>
       <% if user_signed_in? %>   
         <li><%= link_to 'Account', users_account_path, class: "menu_item" %></li>
         <li><%= link_to 'Kids', kids_path, class: "menu_item" %></li>
