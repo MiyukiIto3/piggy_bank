@@ -1,0 +1,12 @@
+<% provide(:title, "Kids") %>
+<div class="out_frame">
+  <div class="inner_frame">
+    <h2>お子様情報を登録</h2>
+
+    <%= render 'form', kid: @kid %>
+
+    <div class="linkbtn linkbtn_white">
+      <%= link_to '戻る', kids_path %>
+    </div>
+  </div>
+</div>

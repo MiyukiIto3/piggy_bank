@@ -1,24 +1,50 @@
-# README
+# Piggy Bank
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス概要
+お子様用のおこづかい管理アプリケーションです。  
+生まれて初めておこづかいをもらった日から使えます。  
+赤ちゃんのうちはパパママがおしゃべりしながら、  
+スマホを操作できるようになったら自分で、  
+楽しくおこづかいを管理することができます。
 
-Things you may want to cover:
+![readme-top-image](https://user-images.githubusercontent.com/97713176/167884857-5d234335-3c45-4a76-a8cb-e5a822e5fd20.png)
 
-* Ruby version
+## URL  
+https://kids-piggy-bank.herokuapp.com/
 
-* System dependencies
+## 使用技術
+* Ruby(2.7.5)
+* Ruby on Rails(6.1.5)
+* MySQL2
+* Docker
+* Rspec
+* Rubocop
 
-* Configuration
+## 機能
+* ユーザー登録機能・ログイン機能(devise)
+* ゲストログイン機能
+* お子様登録・編集機能
+* お子様画像登録機能(Active Storage)
+* おこづかい投稿・編集機能
+* おこづかい投稿ページネーション機能(Kaminari)
+* おこづかい投稿ソート機能(ransack)
 
-* Database creation
+## テスト
+### Rspec
+* 単体テスト(model）
+* 機能テスト(request)
+* 統合テスト(feature)
 
-* Database initialization
+## ER図
+![PiggyBank_ER](https://user-images.githubusercontent.com/97713176/168202822-6cffa0b6-44ab-4dcb-955a-52cf133f2a43.png)
 
-* How to run the test suite
+## 制作背景 
+幼いうちからお金をもらうありがたさやおこづかいで欲しいものが買える喜びを感じることで、しっかりと金銭感覚を身につけてほしいという母の想いから作成しました。   
+小さなお子様でも直感的に操作できるように機能も操作もシンプルにています。  
+パパママにとっても小さなお子様のおこづかいを現金で管理する必要がなくなり、お金をもらったり使ったりしたらその場でサクッと入力して管理できるメリットもあります。  
 
-* Services (job queues, cache servers, search engines, etc.)
+## 特に力を入れた点
+１つのユーザーアカウントで、兄弟分を想定して複数人分のおこづかいを管理できるようにしました。また、小さなお子様でも直感で操作できるよう、おこづかい登録時の入力項目は必要最低限にしました。
 
-* Deployment instructions
-
-* ...
+## 今後追加したい機能
+パパママにお金を預けることで資産運用する機能

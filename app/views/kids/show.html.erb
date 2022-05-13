@@ -1,0 +1,39 @@
+<% provide(:title, "Kids") %>
+<div class="out_frame">
+  <div class="inner_frame">
+    <% if @kid.image.attached? %>
+      <%= image_tag @kid.image, class: "kids_image" %>
+    <% else %>
+      <%= image_tag "default-kids_image.jpeg", class: "kids_image" %>
+    <% end %>
+
+    <table class="kids_table">
+      <tr>
+        <th>名前</th>
+        <td><%= @kid.name %></td>
+      </tr>
+
+      <tr>
+        <th>性別</th>
+        <td><%= @kid.sex %></td>
+      </tr>
+
+      <tr>
+        <th>欲しいもの</th>
+        <td><%= @kid.target %></td>
+      </tr>
+
+      <tr>
+        <th>目標金額</th>
+        <td><%= "#{@kid.target_amount.to_s(:delimited)}円" %></td>
+      </tr>
+    </table>
+
+    <div class="linkbtn linkbtn_wide">
+      <%= link_to '編集', edit_kid_path(@kid), class: "linkbtn_wide"%>
+    </div>
+    <div class="linkbtn linkbtn_white">
+      <%= link_to '戻る', kids_path %>
+    </div>
+  </div>
+</div>

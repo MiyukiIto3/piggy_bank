@@ -1,0 +1,26 @@
+<header>
+  <div class="header_logo">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-piggy-bank"></i> Piggy Bank</div>
+    <% end %>  
+  </div>
+  <nav>
+    <input id="menu_toggle" type="checkbox" />
+    <label class="menu_btn" for="menu_toggle">
+      <span></span>
+    </label>
+     <ul class="menu_box">
+      <li><%= link_to 'Home', root_path, class: "menu_item" %></li>
+      <li><a class="menu_item" href="#about">About</a></li>
+      <% if user_signed_in? %>   
+        <li><%= link_to 'Account', users_account_path, class: "menu_item" %></li>
+        <li><%= link_to 'Kids', kids_path, class: "menu_item" %></li>
+        <li><%= link_to 'PiggyBank', homes_select_kid_path, class: "menu_item" %></li>
+        <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete, class: "menu_item" %></li>
+      <% else %>
+        <li><%= link_to 'Signup', new_user_registration_path, class: "menu_item" %></li>
+        <li><%= link_to 'Login', new_user_session_path, class: "menu_item" %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

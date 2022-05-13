@@ -1,0 +1,470 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+}
+
+body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.4em;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #52616F;
+}
+
+li {
+  list-style: none;
+}
+
+// フラッシュメッセージ
+.flash_message {
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: 200;
+  @media screen and (max-width: 767px) { 
+    font-size: 1.2vw;
+  }
+}
+
+.notice {
+  background-color: rgb(174, 202, 109);
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.alert {
+  background-color: rgb(185, 126, 149);
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+// ヘッダー
+
+@mixin burgerSpan {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #989181;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4em;
+  background: #e9e4d8;
+}
+
+.header_logo {
+  font-size: 24px;
+  a{
+    color: #989181;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    nav {display: inline;}
+  }
+}
+
+.menu_box {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  li a:hover {
+    opacity: 0.7;
+  }
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: -600px 0 0 0;
+    padding: 0.6em 0;
+    text-align: center;
+    background-color: #e9e4d8;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+    z-index: 1;
+    transition-duration: 0.5s;
+  }
+}
+
+.menu_item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em 0 1.9em;
+  color: #989181;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+    padding: 12px 24px;
+    color: #989181;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    &:hover {background-color: #676256;}   
+  } 
+}
+
+#menu_toggle {
+  opacity: 0; 
+  &:checked ~ .menu_btn > span {
+    transform: rotate(45deg);
+    }
+  &:checked ~ .menu_btn > span::before {
+    top: 0;
+    transform: rotate(0);
+    background: #f06c64;
+  }
+    &:checked ~ .menu_btn > span::after {
+      top: 0;
+      transform: rotate(90deg);
+      background: #f06c64;
+  }
+    &:checked ~ .menu_box {
+      visibility: visible;
+      left: 0;
+      margin: 0;
+  }
+}
+
+.menu_btn {
+  transition-duration: 0.25s;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 2px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 2;
+  span {
+    @include burgerSpan;  
+    &::before {
+      @include burgerSpan;
+      content: '';
+      top: -8px;
+      transition-duration: 0.25s;
+    }
+    &::after {
+      @include burgerSpan;
+      content: '';
+      top: 8px;
+      transition-duration: 0.25s;
+    }
+  }
+  @media screen and (min-width: 767px) {
+    display: none;
+  }
+}
+
+// フッター
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.0em;
+  background: #e9e4d8;
+}
+
+.footer_logo {
+  font-size: 12px;
+  color: #989181;
+  margin: 0 auto;
+}
+
+// サインイン＆ログイン＆ログアウト画面、アカウント詳細画面、子供情報画面
+
+.out_frame {
+  min-height: 100vh;
+  background: #f7f1e4;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  text-align: center;
+  color: #52616f;
+  font-weight: 400;
+  h2 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size:16px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    h2 {
+      font-size: 2.4VW;
+    }
+    h5 {
+      font-size:1.6VW;
+    }
+  }
+}
+
+.inner_frame {
+  max-width: 600px;
+  padding: 24px;
+  margin: 16px auto;
+  background: #f7f1e4;
+  border-radius: 4px;
+  box-shadow: #52616F 0px 1px 3px 0px;
+  @media screen and (max-width: 767px) {
+    max-width: 280px;
+  }
+}
+
+.field {
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  width: auto;
+  height: auto;
+  color: #52616F;
+  font-size: 14px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.4vw;
+  }
+}
+
+.actions {
+  line-height: 1.4vw;
+}
+
+#error_explanation {
+  h2 {
+    font-size: 1.4vw;
+    color: #f06c64;
+  }
+}
+
+// 新規登録画面 デバイスによるクラス作成打ち消し
+
+.field_with_errors {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+// 入力フォーム
+
+.input_form {
+  height: 24px;
+  width: 80%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.wide {
+  width: 100%;
+}
+
+// 入力フォーム 文章
+
+.input_form_intro {
+  height: 100px;
+  width: 80%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+// ボタン・ワイド
+
+.btn {
+  font-size: 16px;
+  font-weight: 800;
+  height: 32px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  &:hover {
+    opacity: 0.7;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 1.6vw;
+  }
+}
+
+//  TOP画面スタートボタン
+
+.btn_start {
+  margin-top: 40px;
+  background: #f9df7e;
+  color: #905d1b;
+  @media screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+}
+
+//  TOP画面ゲストログインボタン
+
+.btn_guest_login {
+  margin-top: 40px;
+  background: #97b0be;
+  color: #4b5f6a;
+  @media screen and (max-width: 767px) {
+    margin-top: 10px;
+  }
+}
+
+.button_to {
+  line-height: 32px;
+}
+
+//  kid情報送信ボタン
+
+.btn_submit_kids {
+  background: #f9df7e;
+  color: #905d1b;
+}
+
+.btn_submit_kids_icon {
+  background: #f9df7e;
+  color: #905d1b;
+  height: 80px;
+}
+
+.btn_white_kids {
+  background: white;
+  color: #905d1b;
+  border: 1px solid #f9df7e;
+}
+
+// 送信ボタン
+
+.btn_submit {
+  background: #52616f;
+  color: white;
+}
+
+// 削除ボタン
+
+.btn_delete {
+  background: darkgray;
+  color: white;
+}
+
+.linkbtn {
+  font-size: 16px;
+  margin: 10px auto;
+  line-height: 32px;
+  height: 32px;
+  border-radius: 5px;
+  &:hover {
+    opacity: 0.7;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 1.6vw;
+  }
+}
+
+// 緑ボタン・ワイド
+
+.linkbtn_wide {
+  background: #52616f;
+  color: white;
+  width: 80%;
+}
+
+// 白ボタン・ワイド
+
+.linkbtn_white {
+  background: white;
+  color: #52616f;
+  width: 80%;
+  border: 1px solid #52616f;
+}
+
+// 子供追加ボタン・ワイド
+
+.linkbtn_add_kids {
+  background: white;
+  color: #52616f;
+  max-width: 600px;
+  border: 1.5px solid #52616f;
+  margin-bottom: 20px;
+  @media screen and (max-width: 767px) {
+    max-width: 280px;
+  }
+}
+
+// 緑ボタン
+
+.linkbtn_s {
+  background: #52616f;
+  color: white;
+  width: 100px;
+  display: inline-block;
+  @media screen and (max-width: 767px) {
+    width: 20%;
+  }
+}
+
+// 黄ボタン
+
+.linkbtn_yellow_s {
+  background: #f9df7e;
+  color: #905d1b;
+  width: 60px;
+  display: inline-block;
+  @media screen and (max-width: 767px) {
+    width: 40px;
+    line-height: 24px;
+    height: 24px;
+  }
+}
+
+.btn_hidden {
+  display: none;
+}
+
+// 注釈
+
+.after_required::after {
+  content: "※必須";
+  color: #f06c64;
+  padding-left: 4px;
+}
+
+.after_number::after {
+  content: "※数字";
+  color: blue;
+  padding-left: 4px;
+}
+
+// 隠す
+
+.hidden {
+  display: none;
+}
+
+.sp_hidden {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}

@@ -1,0 +1,67 @@
+// Place all the styles related to the kids controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.kids_table {
+  margin: 10px auto 0 auto;
+  width: 80%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 400;
+  th {
+    width: 40%;
+    padding: 10px;
+    border-bottom: 1px solid #e9e4d8;
+  }
+  td {
+    width: 60%;
+    padding: 10px;
+    border-bottom: 1px solid #e9e4d8;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 1.2vw;
+  }
+}
+
+.action_last {
+  margin-top: 20px;
+}
+
+.kids_image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.kids_image_small {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.image_field {
+  display: block;
+}
+
+#image { 
+  display: none;
+}
+
+.btn_image_upload {
+  display: block;
+  width: 100px;
+  text-align: center;
+  background-color: #ebebeb;
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 12px;
+  margin-top: 10px;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2vw;
+  }
+}
