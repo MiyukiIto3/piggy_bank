@@ -35,6 +35,9 @@ https://kids-piggy-bank.herokuapp.com/
 * 機能テスト(request)
 * 統合テスト(feature)
 
+## ER図
+![PiggyBank_ER](https://user-images.githubusercontent.com/97713176/168202822-6cffa0b6-44ab-4dcb-955a-52cf133f2a43.png)
+
 ## 制作背景 
 幼いうちからお金をもらうありがたさやおこづかいで欲しいものが買える喜びを感じることで、しっかりと金銭感覚を身につけてほしいという母の想いから作成しました。   
 小さなお子様でも直感的に操作できるように機能も操作もシンプルにています。  
